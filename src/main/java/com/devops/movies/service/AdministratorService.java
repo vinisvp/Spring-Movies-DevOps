@@ -4,6 +4,7 @@ import com.devops.movies.dto.AdministratorRequestDTO;
 import com.devops.movies.dto.AdministratorResponseDTO;
 import com.devops.movies.entity.Administrator;
 import com.devops.movies.enums.Role;
+import com.devops.movies.mapper.AdministratorMapper;
 import com.devops.movies.repository.AdministratorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,36 +15,32 @@ public class AdministratorService {
     @Autowired
     private AdministratorRepository administratorRepository;
     
+    @Autowired
+    private AdministratorMapper administratorMapper;
+    
     public AdministratorResponseDTO createAdministrator(AdministratorRequestDTO requestDTO) {
-        if (administratorRepository.findByLogin(requestDTO.getLogin()).isPresent()) {
+        if (administratorRepository.findByLogin(requestDTO.login()).isPresent()) {
             throw new RuntimeException("Login já existe");
         }
         
-        Role role = administratorRepository.existsByRole(Role.CEO) ? Role.ADMINISTRATOR : Role.CEO;
-        
-        Administrator administrator = new Administrator(
-            requestDTO.getLogin(),
-            requestDTO.getPassword(),
-            role
-        );
-        
+        Administrator administrator = administratorMapper.toEntity(requestDTO, Role.ADMINISTRATOR);
         Administrator saved = administratorRepository.save(administrator);
-        return new AdministratorResponseDTO(saved);
+        
+        return administratorMapper.toResponseDTO(saved);
     }
     
     public AdministratorResponseDTO updateAdministrator(Integer id, AdministratorRequestDTO requestDTO) {
         Administrator administrator = administratorRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Administrador não encontrado"));
         
-        if (!administrator.getLogin().equals(requestDTO.getLogin()) && 
-            administratorRepository.findByLogin(requestDTO.getLogin()).isPresent()) {
+        if (!administrator.getLogin().equals(requestDTO.login()) && 
+            administratorRepository.findByLogin(requestDTO.login()).isPresent()) {
             throw new RuntimeException("Login já existe");
         }
         
-        administrator.setLogin(requestDTO.getLogin());
-        administrator.setPassword(requestDTO.getPassword());
-        
+        administratorMapper.updateEntity(administrator, requestDTO);
         Administrator updated = administratorRepository.save(administrator);
-        return new AdministratorResponseDTO(updated);
+        
+        return administratorMapper.toResponseDTO(updated);
     }
 }
