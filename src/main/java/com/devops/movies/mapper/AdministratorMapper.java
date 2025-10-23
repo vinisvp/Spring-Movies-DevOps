@@ -1,7 +1,7 @@
 package com.devops.movies.mapper;
 
-import com.devops.movies.dto.AdministratorRequestDTO;
-import com.devops.movies.dto.AdministratorResponseDTO;
+import com.devops.movies.dto.administrator.AdministratorRequestDTO;
+import com.devops.movies.dto.administrator.AdministratorResponseDTO;
 import com.devops.movies.entity.Administrator;
 import com.devops.movies.enums.Role;
 import org.springframework.stereotype.Component;

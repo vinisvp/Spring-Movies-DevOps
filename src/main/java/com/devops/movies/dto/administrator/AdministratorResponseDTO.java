@@ -1,4 +1,4 @@
-package com.devops.movies.dto;
+package com.devops.movies.dto.administrator;
 
 import com.devops.movies.enums.Role;
 

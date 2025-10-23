@@ -1,7 +1,7 @@
 package com.devops.movies.mapper;
 
-import com.devops.movies.dto.GenreRequestDTO;
-import com.devops.movies.dto.GenreResponseDTO;
+import com.devops.movies.dto.genre.GenreRequestDTO;
+import com.devops.movies.dto.genre.GenreResponseDTO;
 import com.devops.movies.entity.Genre;
 import org.springframework.stereotype.Component;
 

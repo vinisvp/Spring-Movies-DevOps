@@ -1,4 +1,4 @@
-package com.devops.movies.dto;
+package com.devops.movies.dto.customer;
 
 import com.devops.movies.enums.Role;
 import com.devops.movies.enums.Subscription;

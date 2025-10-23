@@ -1,4 +1,4 @@
-package com.devops.movies.dto;
+package com.devops.movies.dto.category;
 
 public record CategoryResponseDTO(
     Integer id,

@@ -1,7 +1,7 @@
 package com.devops.movies.service;
 
-import com.devops.movies.dto.AdministratorRequestDTO;
-import com.devops.movies.dto.AdministratorResponseDTO;
+import com.devops.movies.dto.administrator.AdministratorRequestDTO;
+import com.devops.movies.dto.administrator.AdministratorResponseDTO;
 import com.devops.movies.entity.Administrator;
 import com.devops.movies.enums.Role;
 import com.devops.movies.mapper.AdministratorMapper;

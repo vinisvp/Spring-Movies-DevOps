@@ -1,4 +1,4 @@
-package com.devops.movies.dto;
+package com.devops.movies.dto.administrator;
 
 import jakarta.validation.constraints.NotBlank;
 

@@ -1,7 +1,7 @@
 package com.devops.movies.controller;
 
-import com.devops.movies.dto.AdministratorRequestDTO;
-import com.devops.movies.dto.AdministratorResponseDTO;
+import com.devops.movies.dto.administrator.AdministratorRequestDTO;
+import com.devops.movies.dto.administrator.AdministratorResponseDTO;
 import com.devops.movies.service.AdministratorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

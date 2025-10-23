@@ -1,7 +1,7 @@
 package com.devops.movies.mapper;
 
-import com.devops.movies.dto.CustomerRequestDTO;
-import com.devops.movies.dto.CustomerResponseDTO;
+import com.devops.movies.dto.customer.CustomerRequestDTO;
+import com.devops.movies.dto.customer.CustomerResponseDTO;
 import com.devops.movies.entity.Customer;
 import com.devops.movies.enums.Role;
 import com.devops.movies.enums.Subscription;
