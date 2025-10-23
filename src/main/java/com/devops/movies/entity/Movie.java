@@ -15,6 +15,7 @@ public class Movie {
     @Column(nullable = false, unique = true)
     private String title;
     
+    @Column(length = 1000)
     private String synopsis;
     
     private Double rating;
