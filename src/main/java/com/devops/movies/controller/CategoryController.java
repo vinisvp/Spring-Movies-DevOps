@@ -1,7 +1,7 @@
 package com.devops.movies.controller;
 
-import com.devops.movies.dto.CategoryRequestDTO;
-import com.devops.movies.dto.CategoryResponseDTO;
+import com.devops.movies.dto.category.CategoryRequestDTO;
+import com.devops.movies.dto.category.CategoryResponseDTO;
 import com.devops.movies.service.CategoryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
