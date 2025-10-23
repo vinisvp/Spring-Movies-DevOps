@@ -31,7 +31,12 @@ public class Movie {
     @CollectionTable(name = "movie_images", joinColumns = @JoinColumn(name = "movie_id"))
     @Column(name = "image_url")
     private List<String> images;
-    
+
+    @ElementCollection
+    @CollectionTable(name = "movie_trailers", joinColumns = @JoinColumn(name = "movie_id"))
+    @Column(name = "trailer_url")
+    private List<String> trailers;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "movie_genres",
@@ -104,6 +109,14 @@ public class Movie {
     
     public void setImages(List<String> images) {
         this.images = images;
+    }
+
+    public List<String> getTrailers() {
+        return trailers;
+    }
+
+    public void setTrailers(List<String> trailers) {
+        this.trailers = trailers;
     }
     
     public List<Genre> getGenres() {

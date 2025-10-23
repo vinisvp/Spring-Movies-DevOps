@@ -11,6 +11,7 @@ public record MovieResponseDTO(
     LocalDate release,
     List<String> posters,
     List<String> images,
+    List<String> trailers,
     List<GenreDTO> genres,
     List<CategoryDTO> categories
 ) {

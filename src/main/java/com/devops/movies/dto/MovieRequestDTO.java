@@ -10,6 +10,7 @@ public record MovieRequestDTO(
     LocalDate release,
     List<String> posters,
     List<String> images,
+    List<String> trailers,
     List<GenreIdDTO> genres,
     List<CategoryIdDTO> categories
 ) {

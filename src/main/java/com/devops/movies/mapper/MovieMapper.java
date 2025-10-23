@@ -21,6 +21,7 @@ public class MovieMapper {
         movie.setRelease(dto.release());
         movie.setPosters(dto.posters());
         movie.setImages(dto.images());
+        movie.setTrailers(dto.trailers());
         movie.setGenres(genres);
         movie.setCategories(categories);
         return movie;
@@ -33,6 +34,7 @@ public class MovieMapper {
         movie.setRelease(dto.release());
         movie.setPosters(dto.posters());
         movie.setImages(dto.images());
+        movie.setTrailers(dto.trailers());
         movie.setGenres(genres);
         movie.setCategories(categories);
     }
@@ -54,6 +56,7 @@ public class MovieMapper {
             movie.getRelease(),
             movie.getPosters(),
             movie.getImages(),
+            movie.getTrailers(),
             genreDTOs,
             categoryDTOs
         );
