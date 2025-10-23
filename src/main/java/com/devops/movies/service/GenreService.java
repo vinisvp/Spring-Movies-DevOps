@@ -29,7 +29,7 @@ public class GenreService {
     public GenreResponseDTO update(Integer id, GenreRequestDTO dto) {
         Genre genre = genreRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Genre not found"));
-        genre.setName(dto.getName());
+        genre.setName(dto.name());
         Genre updatedGenre = genreRepository.save(genre);
         return genreMapper.toResponseDTO(updatedGenre);
     }
