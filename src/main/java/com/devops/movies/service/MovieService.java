@@ -1,7 +1,7 @@
 package com.devops.movies.service;
 
-import com.devops.movies.dto.MovieRequestDTO;
-import com.devops.movies.dto.MovieResponseDTO;
+import com.devops.movies.dto.movie.MovieRequestDTO;
+import com.devops.movies.dto.movie.MovieResponseDTO;
 import com.devops.movies.entity.Category;
 import com.devops.movies.entity.Genre;
 import com.devops.movies.entity.Movie;
