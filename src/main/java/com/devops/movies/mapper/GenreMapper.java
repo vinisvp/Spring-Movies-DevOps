@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 public class GenreMapper {
     
     public Genre toEntity(GenreRequestDTO dto) {
-        return new Genre(dto.getName());
+        return new Genre(dto.name());
     }
     
     public GenreResponseDTO toResponseDTO(Genre entity) {
-        return new GenreResponseDTO(entity.getName());
+        return new GenreResponseDTO(entity.getId(), entity.getName());
     }
 }
