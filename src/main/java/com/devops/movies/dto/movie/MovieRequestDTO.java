@@ -1,4 +1,4 @@
-package com.devops.movies.dto;
+package com.devops.movies.dto.movie;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.devops.movies.controller;
 
-import com.devops.movies.dto.CustomerRequestDTO;
-import com.devops.movies.dto.CustomerResponseDTO;
+import com.devops.movies.dto.customer.CustomerRequestDTO;
+import com.devops.movies.dto.customer.CustomerResponseDTO;
 import com.devops.movies.service.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

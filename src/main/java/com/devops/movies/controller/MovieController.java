@@ -1,7 +1,7 @@
 package com.devops.movies.controller;
 
-import com.devops.movies.dto.MovieRequestDTO;
-import com.devops.movies.dto.MovieResponseDTO;
+import com.devops.movies.dto.movie.MovieRequestDTO;
+import com.devops.movies.dto.movie.MovieResponseDTO;
 import com.devops.movies.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
