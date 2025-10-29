@@ -1,7 +1,7 @@
 package com.devops.movies.mapper;
 
-import com.devops.movies.dto.CategoryRequestDTO;
-import com.devops.movies.dto.CategoryResponseDTO;
+import com.devops.movies.dto.category.CategoryRequestDTO;
+import com.devops.movies.dto.category.CategoryResponseDTO;
 import com.devops.movies.entity.Category;
 import org.springframework.stereotype.Component;
 
