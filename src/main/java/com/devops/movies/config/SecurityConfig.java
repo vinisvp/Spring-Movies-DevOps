@@ -39,7 +39,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/customer", "/auth/log-in", "/administrators/log-in", "/ceo/log-in",
                                 "/movies", "/movies/{id}", "/categories", "/categories/{id}",
-                                "/genres", "/genres/{id}", "/h2-console/**")
+                                "/genres", "/genres/{id}", "/h2-console/**",
+                                "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
                         .permitAll()
                         .anyRequest().authenticated())
                 .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
