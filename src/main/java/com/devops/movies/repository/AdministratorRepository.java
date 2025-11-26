@@ -9,8 +9,12 @@ import java.util.Optional;
 
 @Repository
 public interface AdministratorRepository extends JpaRepository<Administrator, Integer> {
-    
+
     Optional<Administrator> findByLogin(String login);
-    
+
+    Optional<Administrator> findByRole(Role role);
+
     boolean existsByRole(Role role);
+
+    boolean existsByLogin(String login);
 }
