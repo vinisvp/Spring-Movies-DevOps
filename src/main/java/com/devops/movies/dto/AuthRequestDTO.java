@@ -1,7 +1,5 @@
 package com.devops.movies.dto;
 
-import com.devops.movies.enums.Role;
-
 import jakarta.validation.constraints.NotNull;
 
 public record AuthRequestDTO(
