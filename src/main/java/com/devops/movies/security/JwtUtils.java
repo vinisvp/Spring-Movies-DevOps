@@ -6,8 +6,6 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.devops.movies.enums.Role;
-
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -50,8 +48,7 @@ public class JwtUtils {
                 .build()
                 .parseClaimsJws(token)
                 .getBody()
-                .get("role", String.class);
-
+                .getSubject();
     }
 
     public String getRoleFromJwtToken(String token) {
