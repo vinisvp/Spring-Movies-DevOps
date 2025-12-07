@@ -34,10 +34,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
+        http.cors(cors -> cors.configure(http))
+                .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/api/auth/**", "/customer", "/auth/log-in", "/administrators/log-in", "/ceo/log-in",
+                        .requestMatchers("/auth/**", "/api/auth/**", "/customer", "/auth/log-in", "/administrators/log-in", "/ceo/log-in",
                                 "/movies", "/movies/{id}", "/categories", "/categories/{id}",
                                 "/genres", "/genres/{id}", "/h2-console/**",
                                 "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html")
