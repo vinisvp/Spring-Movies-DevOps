@@ -35,7 +35,7 @@ public class AuthService {
 
         if (admin.isPresent()) {
             if (!passwordEncoder.matches(authRequest.password(), admin.get().getPassword())) {
-                throw new RuntimeException("Senha inválida.");
+                throw new RuntimeException("Email ou senha incorretos. Verifique suas credenciais.");
             }
             return authMapper.toResponseDTO(admin.get());
         }
@@ -44,11 +44,11 @@ public class AuthService {
         if (customer.isPresent()) {
 
             if (!passwordEncoder.matches(authRequest.password(), customer.get().getPassword())) {
-                throw new RuntimeException("Senha inválida.");
+                throw new RuntimeException("Email ou senha incorretos. Verifique suas credenciais.");
             }
             return authMapper.toResponseDTO(customer.get());
         }
-        throw new RuntimeException("Usuário não existe.");
+        throw new RuntimeException("Usuário não encontrado. Verifique o email digitado.");
     }
 
 }

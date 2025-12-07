@@ -28,11 +28,14 @@ public class AuthController {
     private JwtUtils jwtUtils;
 
     @PostMapping("/log-in")
-    public ResponseEntity<JwtResponseDTO> login(@Valid @RequestBody AuthRequestDTO loginRequest) {
-        System.out.println("Login attempt for user: " + loginRequest.loginOrEmail());
-        AuthResponseDTO response = authService.getAuthResponse(loginRequest);
-        String token = jwtUtils.generateJwtToken(response.loginOrEmail(), response.role().toString());
-        return ResponseEntity.ok(new JwtResponseDTO(token));
+    public ResponseEntity<?> login(@Valid @RequestBody AuthRequestDTO loginRequest) {
+        try {
+            AuthResponseDTO response = authService.getAuthResponse(loginRequest);
+            String token = jwtUtils.generateJwtToken(response.loginOrEmail(), response.role().toString());
+            return ResponseEntity.ok(new JwtResponseDTO(token));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(401).body(java.util.Map.of("message", e.getMessage()));
+        }
     }
 
     @PostMapping("/verify")
