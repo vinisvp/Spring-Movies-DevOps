@@ -11,21 +11,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
-    
+
     @Autowired
     private CategoryService categoryService;
-    
+
     @PostMapping
     public ResponseEntity<CategoryResponseDTO> createCategory(@Valid @RequestBody CategoryRequestDTO requestDTO) {
         CategoryResponseDTO response = categoryService.createCategory(requestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-    
+
     @PutMapping("/{id}")
-    public ResponseEntity<CategoryResponseDTO> updateCategory(@PathVariable Integer id, @Valid @RequestBody CategoryRequestDTO requestDTO) {
+    public ResponseEntity<CategoryResponseDTO> updateCategory(@PathVariable Integer id,
+            @Valid @RequestBody CategoryRequestDTO requestDTO) {
         try {
             CategoryResponseDTO response = categoryService.updateCategory(id, requestDTO);
             return ResponseEntity.ok(response);
@@ -33,13 +35,13 @@ public class CategoryController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @GetMapping
     public ResponseEntity<List<CategoryResponseDTO>> getAllCategories() {
         List<CategoryResponseDTO> categories = categoryService.getAllCategories();
         return ResponseEntity.ok(categories);
     }
-    
+
     @GetMapping("/{id}")
     public ResponseEntity<CategoryResponseDTO> getCategoryById(@PathVariable Integer id) {
         try {
@@ -49,7 +51,7 @@ public class CategoryController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategory(@PathVariable Integer id) {
         try {

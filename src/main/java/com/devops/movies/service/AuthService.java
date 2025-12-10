@@ -10,8 +10,6 @@ import com.devops.movies.dto.AuthRequestDTO;
 import com.devops.movies.dto.AuthResponseDTO;
 import com.devops.movies.entity.Administrator;
 import com.devops.movies.entity.Customer;
-import com.devops.movies.enums.Role;
-import com.devops.movies.mapper.AdministratorMapper;
 import com.devops.movies.mapper.AuthMapper;
 import com.devops.movies.repository.AdministratorRepository;
 import com.devops.movies.repository.CustomerRepository;

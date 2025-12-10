@@ -1,7 +1,7 @@
 package com.devops.movies.controller;
 
-import com.devops.movies.dto.AdministratorRequestDTO;
-import com.devops.movies.dto.AdministratorResponseDTO;
+import com.devops.movies.dto.administrator.AdministratorRequestDTO;
+import com.devops.movies.dto.administrator.AdministratorResponseDTO;
 import com.devops.movies.dto.JwtResponseDTO;
 import com.devops.movies.dto.LoginDTO;
 import com.devops.movies.service.AdministratorService;
@@ -19,6 +19,7 @@ import java.util.List;
  * Controller REST para gerenciamento de administradores.
  * Permite ao CEO criar, editar e excluir administradores.
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/administrators")
 public class AdministratorController {
